@@ -31,14 +31,9 @@ export class App {
   }
 
   async initDb() {
-    console.log(
-      "DB_FROM_CONFIG",
-      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}/${config.db.dbName}`
-    );
+    console.log("DB_FROM_CONFIG", config.db.mongoUrl);
 
-    await mongoose.connect(
-      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}/${config.db.dbName}`
-    );
+    await mongoose.connect(config.db.mongoUrl);
     console.log("Database connection established successfully");
   }
 

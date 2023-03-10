@@ -25,6 +25,8 @@ export interface IConfig {
     port: number;
     host: string;
     dbName: string;
+    password: string;
+    userName: string;
   };
 }
 

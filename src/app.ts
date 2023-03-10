@@ -38,7 +38,7 @@ export class App {
 
     console.log(
       "DB_FROM_CONFIG",
-      `mongodb://${config.db.host}:${config.db.port}/${config.db.dbName}`
+      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.dbName}`
     );
   }
 

@@ -10,5 +10,7 @@ export const config: IConfig = {
     port: Number.parseInt(process.env.DB_PORT || "27017", 10),
     host: process.env.DB_HOST || "localhost",
     dbName: process.env.DB_DATABASE_NAME || "",
+    password: process.env.DB_PASSWORD || "",
+    userName: process.env.DB_USERNAME || "",
   },
 };

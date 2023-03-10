@@ -32,7 +32,7 @@ export class App {
 
   async initDb() {
     await mongoose.connect(
-      `mongodb://${config.db.host}:${config.db.port}/${config.db.dbName}`
+      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.dbName}`
     );
     console.log("Database connection established successfully");
 
@@ -51,6 +51,9 @@ export class App {
     this.useRoutes();
     await this.initDb();
 
+    this.app.all("/", async (req: Request, res: Response) => {
+      res.send({ status: "ok" });
+    });
     this.app.use(exceptionFilter.catch.bind(exceptionFilter)); // !!! Should be the last middleware!!!
     this.app.listen(this.port, () => {
       console.log(`Server is listening on http://localhost:${this.port}`);

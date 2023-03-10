@@ -22,11 +22,7 @@ export interface IConfig {
     port: number;
   };
   db: {
-    port: number;
-    host: string;
-    dbName: string;
-    password: string;
-    userName: string;
+    mongoUrl: string;
   };
 }
 

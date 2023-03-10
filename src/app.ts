@@ -32,12 +32,12 @@ export class App {
 
   async initDb() {
     console.log(
-        "DB_FROM_CONFIG",
-        `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.dbName}`
+      "DB_FROM_CONFIG",
+      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}/${config.db.dbName}`
     );
 
     await mongoose.connect(
-      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.dbName}`
+      `mongodb+srv://${config.db.userName}:${config.db.password}@${config.db.host}/${config.db.dbName}`
     );
     console.log("Database connection established successfully");
   }
